@@ -1,0 +1,30 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.4.5/jscolor.min.js" integrity="sha512-YxdM5kmpjM5ap4Q437qwxlKzBgJApGNw+zmchVHSNs3LgSoLhQIIUNNrR5SmKIpoQ18mp4y+aDAo9m/zBQ408g==" crossorigin="anonymous"></script>
+
+<form id="form" action="gen" method="post" class="form-example">
+    <input value=512 type="numbar" name="width"/>
+    <input value=512 type="numbar" name="height"/>
+    <input value="#3399FF" id="color" name="color" data-jscolor="{}">
+    <input type="numbar" value=80 id="colorPar" name="colorPar" />
+    <button id="submit-button" type="button">生成</button>
+</form>
+
+<script type="text/javascript">
+    const form = document.getElementById("form")
+    const submitButton = document.getElementById("submit-button")
+    
+    submitButton.onclick = () => {
+      const formData = new FormData(form)
+      const action = form.getAttribute("action")
+      const options = {
+        method: 'POST',
+        body: formData,
+      }
+      fetch(action, options).then((e) => {
+        if(e.status === 200) {
+          alert("保存しました。")
+          return
+        }
+        alert("保存できませんでした。")
+      })
+    }
+</script>
