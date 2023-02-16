@@ -1,9 +1,21 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.4.5/jscolor.min.js" integrity="sha512-YxdM5kmpjM5ap4Q437qwxlKzBgJApGNw+zmchVHSNs3LgSoLhQIIUNNrR5SmKIpoQ18mp4y+aDAo9m/zBQ408g==" crossorigin="anonymous"></script>
 
 <form id="form" action="gen" method="post" class="form-example">
+    <p>
+        縦(px)
+    </p>
     <input value=512 type="numbar" name="width"/>
+    <p>
+        横(px)
+    </p>
     <input value=512 type="numbar" name="height"/>
+    <p>
+        メインの色(RGB)
+    </p>
     <input value="#3399FF" id="color" name="color" data-jscolor="{}">
+    <p>
+        メインの色の占有率(%)
+    </p>
     <input type="numbar" value=80 id="colorPar" name="colorPar" />
     <button id="submit-button" type="button">生成</button>
 </form>
